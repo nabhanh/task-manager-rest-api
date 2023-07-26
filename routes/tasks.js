@@ -80,7 +80,7 @@ router.post('/', validateTask, (req, res) => {
   };
 
   tasks.push(newTask);
-  writeFileSync('./tasks.json', JSON.stringify(tasks));
+  writeFileSync('./tasks.json', JSON.stringify(tasks, null, 2));
   res.status(201).json(newTask);
 });
 
@@ -105,7 +105,7 @@ router.put('/:id', validateTask, (req, res) => {
   };
 
   tasks[taskIndex] = updatedTask;
-  writeFileSync('./tasks.json', JSON.stringify(tasks));
+  writeFileSync('./tasks.json', JSON.stringify(tasks, null, 2));
 
   res.json(updatedTask);
 });
@@ -119,7 +119,7 @@ router.delete('/:id', (req, res) => {
   }
 
   tasks.splice(taskIndex, 1);
-  writeFileSync('./tasks.json', JSON.stringify(tasks));
+  writeFileSync('./tasks.json', JSON.stringify(tasks, null, 2));
 
   res.sendStatus(204);
 });

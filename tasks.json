@@ -1,1 +1,20 @@
-[{"id":2,"title":"Gym","description":"Go to the gym","priority":2,"isCompleted":true,"createdAt":"2023-07-26T07:51:34.193Z","updatedAt":"2023-07-26T08:04:36.825Z"},{"id":2,"title":"Work","description":"Finish up ticket","priority":0,"isCompleted":false,"createdAt":"2023-07-26T08:06:25.288Z","updatedAt":"2023-07-26T08:06:25.288Z"}]
+[
+  {
+    "id": 1,
+    "title": "Work",
+    "description": "Finish up ticket",
+    "priority": 0,
+    "isCompleted": false,
+    "createdAt": "2023-07-26T08:23:51.996Z",
+    "updatedAt": "2023-07-26T08:23:51.997Z"
+  },
+  {
+    "id": 2,
+    "title": "Gym",
+    "description": "Go to the gym",
+    "priority": 1,
+    "isCompleted": false,
+    "createdAt": "2023-07-26T08:24:11.298Z",
+    "updatedAt": "2023-07-26T08:24:11.298Z"
+  }
+]
