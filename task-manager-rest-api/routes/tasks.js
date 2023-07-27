@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import tasks from '../../tasks.json' assert { type: 'json' };
+import tasks from '../tasks.json' assert { type: 'json' };
 import { writeFileSync } from 'fs';
 import { validateTask } from '../helpers/validator.js';
 import { Priority } from '../constants.js';
