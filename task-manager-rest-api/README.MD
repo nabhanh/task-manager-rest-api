@@ -1,12 +1,28 @@
-# Airtribe Assignments Mono Repo
+# Airtribe Task Manager REST API Project
 
-This is a mono repo for all the assignments given by Airtribe for the Backend Engineer course.
+## Description
 
-## How to run
+This is a REST API project for a task manager application. It is built with Node and Express.
 
-Each assignment has its own folder. To run each assignment, go to the folder and run the following commands:
+## Installation
 
 ```bash
-npm install
-npm start
+$ npm install
+```
+
+## Running the app
+
+```bash
+$ npm run start
+```
+
+## The following endpoints are available
+
+```bash
+$ GET /tasks
+$ GET /tasks/priority/:priority
+$ GET /tasks/:id
+$ POST /tasks
+$ PUT /tasks/:id
+$ DELETE /tasks/:id
 ```
