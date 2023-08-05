@@ -5,6 +5,13 @@
     "email": "johnDoe@mailinator.com",
     "password": "123456",
     "createdAt": "2019-12-12T12:12:12.000Z",
-    "updatedAt": "2019-12-12T12:12:12.000Z"
+    "updatedAt": "2019-12-12T12:12:12.000Z",
+    "preference": {
+      "userId": 1,
+      "newsCategories": ["sport"],
+      "newsSources": ["bbc-news"],
+      "createdAt": "2019-12-12T12:12:12.000Z",
+      "updatedAt": "2019-12-12T12:12:12.000Z"
+    }
   }
 ]

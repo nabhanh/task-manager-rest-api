@@ -1,4 +1,4 @@
-import { User } from './types';
+import { UserWithPreferences } from '../schemas/user';
 
 declare global {
   namespace NodeJS {
@@ -12,7 +12,7 @@ declare global {
   }
   namespace Express {
     export interface Request {
-      user?: User | null;
+      user?: UserWithPreferences | null;
     }
   }
 }

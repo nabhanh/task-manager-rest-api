@@ -2,8 +2,8 @@
 
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { User } from '../../types/types';
 import users from '../../users.json';
+import { UserWithPreferences } from '../../schemas/user';
 
 export const auth = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -15,11 +15,11 @@ export const auth = async (req: Request, res: Response, next: NextFunction) => {
 
     const decoded = jwt.verify(token!, process.env.JWT_SECRET!);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const user = users.find((user: User) => user.id === (decoded as any).id);
+    const user = users.find(user => user.id === (decoded as any).id);
     if (!user) {
       throw new Error();
     }
-    req.user = user;
+    req.user = user as UserWithPreferences;
     next();
   } catch (error) {
     res.status(401).json({ message: 'Not authorized to access this resource' });
