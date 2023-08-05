@@ -16,7 +16,9 @@
     "typescript": "^5.1.6"
   },
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "task-manager": "pnpm dlx ts-node projects/task-manager-rest-api/src/index.ts",
+    "news-api": "pnpm dlx ts-node projects/news-rest-api/src/index.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
