@@ -1,16 +1,15 @@
 import { Router } from 'express';
 import users from '../../users.json';
-import { compare, genSalt, hash } from 'bcrypt-ts';
-import { sign } from 'jsonwebtoken';
 
 const router = Router();
 
 router.post('/register', async (req, res) => {
   try {
     const { email, password, name } = req.body;
+    const bcrypt = await import('bcrypt-ts');
 
-    const salt = await genSalt(Number(process.env.SALT_ROUNDS));
-    const hashedPassword = await hash(password, salt);
+    const salt = await bcrypt.genSalt(Number(process.env.SALT_ROUNDS));
+    const hashedPassword = await bcrypt.hash(password, salt);
 
     const newUser = {
       id: users.length + 1,
@@ -22,6 +21,8 @@ router.post('/register', async (req, res) => {
     };
 
     users.push(newUser);
+
+    const { sign } = await import('jsonwebtoken');
 
     const token = sign({ id: newUser.id }, process.env.JWT_SECRET!, {
       expiresIn: '1h'
@@ -43,6 +44,7 @@ router.post('/login', async (req, res) => {
     return res.status(404).json({ message: 'User not found' });
   }
 
+  const { compare } = await import('bcrypt-ts');
   const isMatch = await compare(password, user.password);
 
   if (!isMatch) {
