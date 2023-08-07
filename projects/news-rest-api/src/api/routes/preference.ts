@@ -23,7 +23,7 @@ router.put('/', auth, validator(PreferencePutSchema), async (req, res) => {
     user.preference.newsCategories = newsCategories;
     user.preference.updatedAt = new Date().toISOString();
     const index = users.findIndex(u => u.id === user.id);
-    users[index] = user;
+    users[index] = user as never;
     writeFileSync('./users.json', JSON.stringify(users, null, 2));
     return res.json({ data: user.preference });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
