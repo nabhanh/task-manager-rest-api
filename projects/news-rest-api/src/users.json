@@ -25,10 +25,10 @@
     "updatedAt": "2023-08-07T08:02:20.414Z",
     "preference": {
       "userId": 2,
-      "newsSources": [],
-      "newsCategories": [],
+      "newsSources": ["verge"],
+      "newsCategories": ["tech"],
       "createdAt": "2023-08-07T08:02:20.414Z",
-      "updatedAt": "2023-08-07T08:02:20.414Z",
+      "updatedAt": "2023-08-07T09:25:37.941Z",
       "read": [],
       "favorite": []
     }

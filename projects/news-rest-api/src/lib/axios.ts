@@ -19,7 +19,12 @@ const instance = setupCache(
   axios.create({
     baseURL: NEWS_API_URL,
     params: {
-      apiKey: NEWS_API_KEY
+      apiKey: NEWS_API_KEY,
+      query: {
+        $query: {
+          lang: 'eng'
+        }
+      }
     }
   }),
   {
@@ -29,7 +34,7 @@ const instance = setupCache(
 );
 
 instance.interceptors.request.use(request => {
-  logger.info('Starting Request', JSON.stringify(request, null, 2));
+  logger.info(JSON.stringify(request, null, 2));
   return request;
 });
 

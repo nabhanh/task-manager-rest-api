@@ -39,7 +39,10 @@ router.post('/register', validator(RegisterSchema), async (req, res) => {
     };
 
     users.push(newUser as never);
-    writeFileSync('../users.json', JSON.stringify(users, null, 2));
+    writeFileSync(
+      __dirname + '/../../users.json',
+      JSON.stringify(users, null, 2)
+    );
 
     const { sign } = await import('jsonwebtoken');
 
