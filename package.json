@@ -17,8 +17,8 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "task-manager-rest-api:start": "pnpm dlx ts-node projects/task-manager-rest-api/src/index.ts",
-    "news-rest-api:start": "pnpm dlx ts-node projects/news-rest-api/src/index.ts"
+    "task-manager-rest-api:start": "pnpm dlx ts-node-dev --transpile-only projects/task-manager-rest-api/src/index.ts",
+    "news-rest-api:start": "pnpm dlx ts-node-dev --transpile-only projects/news-rest-api/src/index.ts"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

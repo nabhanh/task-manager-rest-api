@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { auth } from '../middlewares/auth';
 import users from '../../users.json';
-import validate from '../../lib/validator';
+import validator from '../../lib/validator';
 import { PreferencePutSchema } from '../../schemas/preference';
 import { writeFileSync } from 'node:fs';
 
@@ -11,7 +11,7 @@ router.get('/', auth, (req, res) => {
   return res.json({ data: req.user?.preference });
 });
 
-router.put('/', auth, validate(PreferencePutSchema), async (req, res) => {
+router.put('/', auth, validator(PreferencePutSchema), async (req, res) => {
   try {
     const { newsSources, newsCategories } = req.body;
     const { user } = req;

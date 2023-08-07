@@ -1,9 +1,11 @@
+import 'dotenv/config';
 import express, { NextFunction, Request, Response } from 'express';
 import authRouter from './api/routes/auth';
 import newsRouter from './api/routes/news';
 import preferenceRouter from './api/routes/preference';
-const app = express();
 import logger from './lib/logger';
+
+const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +20,7 @@ app.use('/news', newsRouter);
 app.use('/preferences', preferenceRouter);
 
 app.all('*', (req, res) => {
+  console.log(req.url, req.method);
   res.status(404).json({ message: 'Not found' });
 });
 

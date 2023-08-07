@@ -1,4 +1,4 @@
-export const NEWS_API_URL = 'https://newsapi.org/v2';
+export const NEWS_API_URL = 'http://eventregistry.org/api/v1';
 
 // Will move to .env file
-export const NEWS_API_KEY = '91c21333ccb84a6892f4fe6ba21fe8b3';
+export const NEWS_API_KEY = '8d58f0fb-e3d6-49e3-8392-5fd3a027e0b1';

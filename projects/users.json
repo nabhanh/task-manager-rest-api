@@ -8,8 +8,12 @@
     "updatedAt": "2019-12-12T12:12:12.000Z",
     "preference": {
       "userId": 1,
-      "newsCategories": ["sport"],
-      "newsSources": ["bbc-news"],
+      "newsCategories": [
+        "sport"
+      ],
+      "newsSources": [
+        "bbc-news"
+      ],
       "read": [],
       "favorite": [],
       "createdAt": "2019-12-12T12:12:12.000Z",
@@ -28,9 +32,11 @@
       "newsSources": [],
       "newsCategories": [],
       "createdAt": "2023-08-07T08:02:20.414Z",
-      "updatedAt": "2023-08-07T08:02:20.414Z",
+      "updatedAt": "2023-08-07T08:47:05.242Z",
       "read": [],
-      "favorite": []
+      "favorite": [
+        "7667798546"
+      ]
     }
   }
 ]

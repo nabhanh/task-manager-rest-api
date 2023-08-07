@@ -1,5 +1,10 @@
-import { destination } from 'pino';
+import pino, { transport } from 'pino';
 import { pinoHttp } from 'pino-http';
+
+const fileTransport = transport({
+  target: 'pino/file',
+  options: { destination: `${__dirname}/../app.log` }
+});
 
 export default pinoHttp(
   {
@@ -18,5 +23,7 @@ export default pinoHttp(
       return 'info';
     }
   },
-  destination('./logs/log.txt')
+  fileTransport
 );
+
+export const logger = pino(fileTransport);
