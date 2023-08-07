@@ -15,9 +15,9 @@ export default pinoHttp(
       responseTime: 'timeTaken'
     },
     customLogLevel: (res, err) => {
-      if (res.statusCode || (500 >= 400 && res.statusCode) || 500 < 500) {
+      if ((res.statusCode || 500) >= 400 && (res.statusCode || 500) < 500) {
         return 'warn';
-      } else if (res.statusCode || 500 >= 500 || err) {
+      } else if ((res.statusCode || 500) >= 500 || err) {
         return 'error';
       }
       return 'info';
