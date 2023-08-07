@@ -29,6 +29,6 @@ const categories = [
 export const PreferencePutSchema = z.object({
   body: z.object({
     newsSources: z.array(z.string()),
-    newsCategories: z.enum(categories)
+    newsCategories: z.array(z.enum(categories))
   })
 });

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "johnDoe@mailinator.com",
+    "password": "123456",
+    "createdAt": "2019-12-12T12:12:12.000Z",
+    "updatedAt": "2019-12-12T12:12:12.000Z",
+    "preference": {
+      "userId": 1,
+      "newsCategories": [
+        "sport"
+      ],
+      "newsSources": [
+        "bbc-news"
+      ],
+      "read": [],
+      "favorite": [],
+      "createdAt": "2019-12-12T12:12:12.000Z",
+      "updatedAt": "2019-12-12T12:12:12.000Z"
+    }
+  },
+  {
+    "id": 2,
+    "email": "nabhanhanif2000@gmail.com",
+    "name": "Nabhan",
+    "password": "$2b$10$vQil72slUUm/EzD4dv3XoekT.iSM7KBKykZjLlkAAeIlJJrMry8EW",
+    "createdAt": "2023-08-07T08:02:20.414Z",
+    "updatedAt": "2023-08-07T08:02:20.414Z",
+    "preference": {
+      "userId": 2,
+      "newsSources": [
+        "verge"
+      ],
+      "newsCategories": [
+        "tech"
+      ],
+      "createdAt": "2023-08-07T08:02:20.414Z",
+      "updatedAt": "2023-08-07T09:11:04.796Z",
+      "read": [],
+      "favorite": []
+    }
+  }
+]

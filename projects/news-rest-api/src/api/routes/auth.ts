@@ -53,7 +53,6 @@ router.post('/register', validator(RegisterSchema), async (req, res) => {
     res.status(201).setHeader('X-Auth-Token', token).json({ data: newUser });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
-    console.log(error);
     req.log.error(error.message);
     res.status(500).json({ message: 'Something went wrong' });
   }

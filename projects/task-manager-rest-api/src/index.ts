@@ -24,7 +24,6 @@ app.all('*', (_req, res) => {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.use((err: Error, _req: Request, res: Response, _: NextFunction) => {
-  console.log(err.stack);
   res.status(500).json({ message: err.message });
 });
 

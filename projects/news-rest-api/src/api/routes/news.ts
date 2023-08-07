@@ -53,7 +53,6 @@ router.post('/:id/:type', auth, async (req, res) => {
     if (!user) {
       throw new Error();
     }
-    console.log(id);
     if (type === 'favorite') user.preference.favorite.push(id);
     if (type === 'read') user.preference.read.push(id);
     user.preference.updatedAt = new Date().toISOString();
@@ -75,7 +74,6 @@ router.get('/read', auth, async (req, res) => {
       throw new Error();
     }
     const readIds = user.preference.read;
-    console.log(readIds);
     const readArticles = await Promise.all(
       readIds.map(async id => {
         const article = await newsAxiosInstance.get(`/article/getArticle`, {

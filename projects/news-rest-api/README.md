@@ -8,6 +8,12 @@ This is a simple REST API for news. It allows you to fetch news articles, mark t
 
 Follow the steps given in the Project Readme to install the project. It's configured with pnpm workspaces, so you can run `pnpm install` in the root folder to install all dependencies.
 
+## Running the app
+
+```bash
+pnpm run news-rest-api:start
+```
+
 ## Usage
 
 ### Auth
