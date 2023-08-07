@@ -119,4 +119,23 @@ router.get('/favorite', auth, async (req, res) => {
   }
 });
 
+router.get('/search/:query', auth, async (req, res) => {
+  try {
+    const query = req.params.query;
+    const news = await newsAxiosInstance.get('/article/getArticles', {
+      params: {
+        articlesCount: req.query.pageSize || 10,
+        articlesPage: req.params.page || 1,
+        keyword: query
+      }
+    });
+
+    res.json({ data: news.data });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (error: any) {
+    req.log.error(error.message);
+    res.status(500).json({ message: 'Something went wrong' });
+  }
+});
+
 export default router;
