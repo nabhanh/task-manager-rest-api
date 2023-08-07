@@ -53,7 +53,14 @@ router.post('/register', validator(RegisterSchema), async (req, res) => {
         expiresIn: '1h'
       }
     );
-    res.status(201).setHeader('X-Auth-Token', token).json({ data: newUser });
+    res
+      .status(201)
+      .setHeader('X-Auth-Token', token)
+      .json({
+        data: {
+          ...omitProperties(newUser, ['password'])
+        }
+      });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     req.log.error(error.message);
