@@ -75,16 +75,16 @@ router.get('/read', auth, async (req, res) => {
     }
     const readIds = user.preference.read;
     const readArticles = await Promise.all(
-      readIds.map(async id => {
-        const article = await newsAxiosInstance.get(`/article/getArticle`, {
+      readIds.map(id => {
+        const article = newsAxiosInstance.get(`/article/getArticle`, {
           params: {
             articleUri: id
           }
         });
-        return article.data;
+        return article;
       })
     );
-    return res.json({ data: readArticles });
+    return res.json({ data: readArticles.map(a => a.data) });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     req.log.error(error.message);
@@ -100,16 +100,16 @@ router.get('/favorite', auth, async (req, res) => {
     }
     const favoriteIds = user.preference.favorite;
     const favoriteArticles = await Promise.all(
-      favoriteIds.map(async id => {
-        const article = await newsAxiosInstance.get(`/article/getArticle`, {
+      favoriteIds.map(id => {
+        const article = newsAxiosInstance.get(`/article/getArticle`, {
           params: {
             articleUri: id
           }
         });
-        return article.data;
+        return article;
       })
     );
-    return res.json({ data: favoriteArticles });
+    return res.json({ data: favoriteArticles.map(a => a.data) });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     req.log.error(error.message);
