@@ -7,7 +7,8 @@ const UserSchema = z.object({
   name: z.string(),
   password: z.string(),
   createdAt: z.string(),
-  updatedAt: z.string()
+  updatedAt: z.string(),
+  isConfirmed: z.boolean().default(false)
 });
 
 export type User = z.infer<typeof UserSchema>;

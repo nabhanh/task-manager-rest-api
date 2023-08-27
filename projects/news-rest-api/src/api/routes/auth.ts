@@ -5,6 +5,7 @@ import validator from '../../lib/validator';
 import { LoginSchema, RegisterSchema } from '../../schemas/auth';
 import { writeFileSync } from 'node:fs';
 import users from '../../users.json';
+import sendMail from '../../lib/mailer';
 
 const router = Router();
 
@@ -25,6 +26,7 @@ router.post('/register', validator(RegisterSchema), async (req, res) => {
       email,
       name,
       password: hashedPassword,
+      isConfirmed: false,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
       preference: {
@@ -44,26 +46,65 @@ router.post('/register', validator(RegisterSchema), async (req, res) => {
       JSON.stringify(users, null, 2)
     );
 
+    //send confirmation email
     const { sign } = await import('jsonwebtoken');
+    const token = sign({ id: newUser.id }, process.env.JWT_SECRET as string, {
+      expiresIn: '1d'
+    });
 
-    const token = sign(
-      { id: newUser.id },
-      process.env.JWT_SECRET || 'thisisabigsecret🤫',
-      {
-        expiresIn: '1h'
-      }
+    const confirmationUrl = `http://${req.get(
+      'host'
+    )}/auth/confirm?token=${token}}`;
+    await sendMail(
+      email,
+      'Confirm your email',
+      `Please click on this link to confirm your email: ${confirmationUrl}`
     );
-    res
-      .status(201)
-      .setHeader('X-Auth-Token', token)
-      .json({
-        data: {
-          ...omitProperties(newUser, ['password'])
-        }
-      });
+
+    res.status(201).json({
+      data: {
+        ...omitProperties(newUser, ['password'])
+      }
+    });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     req.log.error(error.message);
+    res.status(500).json({ message: 'Something went wrong' });
+  }
+});
+
+router.get('/confirm', async (req, res) => {
+  try {
+    const { token } = req.query;
+    if (!token) {
+      return res.status(400).json({ message: 'Invalid token' });
+    }
+
+    const { verify } = await import('jsonwebtoken');
+    const { id } = verify(
+      token as string,
+      process.env.JWT_SECRET as string
+    ) as { id: number };
+
+    const user = users.find(
+      user => user.id === id
+    ) as unknown as UserWithPreferences;
+
+    if (!user) {
+      return res.status(400).json({ message: 'Invalid token' });
+    }
+
+    user.isConfirmed = true;
+
+    writeFileSync(
+      __dirname + '/../../users.json',
+      JSON.stringify(users, null, 2)
+    );
+
+    res.status(200).json({ message: 'Email confirmed' });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (e: any) {
+    req.log.error(e.message);
     res.status(500).json({ message: 'Something went wrong' });
   }
 });
