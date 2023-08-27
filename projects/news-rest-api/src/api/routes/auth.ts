@@ -52,9 +52,9 @@ router.post('/register', validator(RegisterSchema), async (req, res) => {
       expiresIn: '1d'
     });
 
-    const confirmationUrl = `http://${req.get(
-      'host'
-    )}/auth/confirm?token=${token}}`;
+    const confirmationUrl = `http://localhost:${
+      process.env.PORT || 3000
+    }/auth/confirm?token=${token}}`;
     await sendMail(
       email,
       'Confirm your email',
@@ -68,7 +68,7 @@ router.post('/register', validator(RegisterSchema), async (req, res) => {
     });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
-    req.log.error(error.message);
+    console.log(error);
     res.status(500).json({ message: 'Something went wrong' });
   }
 });
@@ -109,6 +109,43 @@ router.get('/confirm', async (req, res) => {
   }
 });
 
+router.post('/resend-confirmation', async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = users.find(user => user.email === email);
+
+    if (!user) {
+      return res.status(400).json({ message: 'Invalid email' });
+    }
+
+    if (user.isConfirmed) {
+      return res.status(400).json({ message: 'Email already confirmed' });
+    }
+
+    //send confirmation email
+    const { sign } = await import('jsonwebtoken');
+    const token = sign({ id: user.id }, process.env.JWT_SECRET as string, {
+      expiresIn: '1d'
+    });
+
+    const confirmationUrl = `http://localhost:${
+      process.env.PORT || 3000
+    }/auth/confirm?token=${token}}`;
+    await sendMail(
+      email,
+      'Confirm your email',
+      `Please click on this link to confirm your email: ${confirmationUrl}`
+    );
+
+    res.status(200).json({ message: 'Email sent' });
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (e: any) {
+    req.log.error(e.message);
+    res.status(500).json({ message: 'Something went wrong' });
+  }
+});
+
 router.post('/login', validator(LoginSchema), async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -117,6 +154,10 @@ router.post('/login', validator(LoginSchema), async (req, res) => {
 
     if (!user) {
       return res.status(400).json({ message: 'Invalid Credentials' });
+    }
+
+    if (!user.isConfirmed) {
+      return res.status(400).json({ message: 'Email not confirmed' });
     }
 
     const { compare } = await import('bcrypt');

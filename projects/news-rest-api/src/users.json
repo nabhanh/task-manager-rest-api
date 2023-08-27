@@ -2,6 +2,7 @@
   {
     "id": 1,
     "email": "Smita_Pothuvaal49@yahoo.co.in",
+    "isConfirmed": true,
     "name": "Kama Devar",
     "password": "$2b$10$y2xN4FATbPV9zC2WJWYYV.kVUrchfuw6Btm/BO/MAMmI8hL0p/W3O",
     "createdAt": "2023-08-27T12:19:14.632Z",
@@ -18,357 +19,36 @@
   },
   {
     "id": 2,
-    "email": "Gauraang.Nehru@hotmail.com",
-    "name": "Aayushman Marar",
-    "password": "$2b$10$.rZyKufoWDNCPtilBniDg.vph9JaRaAcl9uiQxzuFCAIZHFvj.Yfi",
-    "createdAt": "2023-08-27T12:19:15.066Z",
-    "updatedAt": "2023-08-27T12:19:15.066Z",
+    "email": "Aatreya18@hotmail.com",
+    "name": "Dr. Sukanya Gandhi",
+    "password": "$2b$10$/b1HD.76psaKUm9vGWJmtuRrC1bF7metAsHHc42ErmR4ckKCyczXK",
+    "isConfirmed": false,
+    "createdAt": "2023-08-27T14:09:50.613Z",
+    "updatedAt": "2023-08-27T14:09:50.613Z",
     "preference": {
       "userId": 2,
       "newsSources": [],
       "newsCategories": [],
-      "createdAt": "2023-08-27T12:19:15.066Z",
-      "updatedAt": "2023-08-27T12:19:15.066Z",
+      "createdAt": "2023-08-27T14:09:50.613Z",
+      "updatedAt": "2023-08-27T14:09:50.613Z",
       "read": [],
       "favorite": []
     }
   },
   {
     "id": 3,
-    "email": "Bela.Reddy28@hotmail.com",
-    "name": "Ekaaksh Chattopadhyay",
-    "password": "$2b$10$pQw7oUqF9qS7..tRNd8FduxV5o5HB3mmeBppnjzXwm2iRarZD8LP.",
-    "createdAt": "2023-08-27T12:19:15.591Z",
-    "updatedAt": "2023-08-27T12:19:15.591Z",
+    "email": "nabhan.hanif@icloud.com",
+    "name": "Nabhan Hanif",
+    "password": "$2b$10$eVMjgHVIFaUcAqkShC2pkuzaiUE7NVASi6XE5q0cgjNaIJFFmbMc6",
+    "isConfirmed": false,
+    "createdAt": "2023-08-27T14:42:04.566Z",
+    "updatedAt": "2023-08-27T14:42:04.566Z",
     "preference": {
       "userId": 3,
       "newsSources": [],
       "newsCategories": [],
-      "createdAt": "2023-08-27T12:19:15.591Z",
-      "updatedAt": "2023-08-27T12:19:15.591Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 4,
-    "email": "Somnath49@gmail.com",
-    "name": "Padma Pothuvaal",
-    "password": "$2b$10$GcbE0bPpFPxnDdwq7OhwKO4QheZfDV/jNCobUBVTFR8TqTr0q3r2W",
-    "createdAt": "2023-08-27T12:19:16.109Z",
-    "updatedAt": "2023-08-27T12:19:16.109Z",
-    "preference": {
-      "userId": 4,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:19:16.109Z",
-      "updatedAt": "2023-08-27T12:19:16.109Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 5,
-    "email": "Vaidehi.Pandey@gmail.com",
-    "name": "Dinesh Bhattathiri",
-    "password": "$2b$10$Uok.o2WEDRjFCxNQO9oUlOtdyNuLdTWbsOTud5avsb/LKwEiHzAAK",
-    "createdAt": "2023-08-27T12:19:16.625Z",
-    "updatedAt": "2023-08-27T12:19:16.625Z",
-    "preference": {
-      "userId": 5,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:19:16.625Z",
-      "updatedAt": "2023-08-27T12:19:16.625Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 6,
-    "email": "Amaresh_Chaturvedi63@gmail.com",
-    "name": "Kanti Khan",
-    "password": "$2b$10$Pq2RIUhb0qgHY//.tnt.m.8ftvz208e7mcKfPL0Pc2IvWKuBNKn7e",
-    "createdAt": "2023-08-27T12:19:17.095Z",
-    "updatedAt": "2023-08-27T12:19:17.095Z",
-    "preference": {
-      "userId": 6,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:19:17.095Z",
-      "updatedAt": "2023-08-27T12:19:17.095Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 7,
-    "email": "Opaline_Guneta96@hotmail.com",
-    "name": "Dr. Bandhul Panicker",
-    "password": "$2b$10$AqFlbVZ/lc6yygQdMuFNK.WYn/oN7v01xaLUpWl.XMnTatC9bz58q",
-    "createdAt": "2023-08-27T12:19:17.526Z",
-    "updatedAt": "2023-08-27T12:19:17.526Z",
-    "preference": {
-      "userId": 7,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:19:17.526Z",
-      "updatedAt": "2023-08-27T12:19:17.526Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 8,
-    "email": "Mohinder_Naik23@hotmail.com",
-    "name": "Dr. Chandrabhan Kakkar",
-    "password": "$2b$10$71RI0G249GY5.qDXyzjsD.hwjVywU1tJ7Gilg7a92CPmSNLkUl6di",
-    "createdAt": "2023-08-27T12:19:18.046Z",
-    "updatedAt": "2023-08-27T12:19:18.046Z",
-    "preference": {
-      "userId": 8,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:19:18.046Z",
-      "updatedAt": "2023-08-27T12:19:18.046Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 9,
-    "email": "Avantika31@hotmail.com",
-    "name": "Dr. Ankal Abbott",
-    "password": "$2b$10$kse1/5j.9iNwBkt72TXyq.gnEyzM.QFCaAtRTlGiL3vwtQM1DtULO",
-    "createdAt": "2023-08-27T12:19:18.562Z",
-    "updatedAt": "2023-08-27T12:19:18.562Z",
-    "preference": {
-      "userId": 9,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:19:18.562Z",
-      "updatedAt": "2023-08-27T12:19:18.562Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 10,
-    "email": "Nikita.Pilla@hotmail.com",
-    "name": "Gitanjali Sethi",
-    "password": "$2b$10$s5RTgerso0wqiQJ/6MRcS.WP51Qmor/rZZcvGEBH8N0Gb7wsIhUY6",
-    "createdAt": "2023-08-27T12:19:19.074Z",
-    "updatedAt": "2023-08-27T12:19:19.074Z",
-    "preference": {
-      "userId": 10,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:19:19.074Z",
-      "updatedAt": "2023-08-27T12:19:19.074Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 11,
-    "email": "Himadri38@gmail.com",
-    "name": "Triloki Varma-Dhawan",
-    "password": "$2b$10$OKwmG/hbGoH5TLlFqagPo.j3jDhDJXQhIjDOnsjioDTEFbrlq.jSy",
-    "createdAt": "2023-08-27T12:19:19.581Z",
-    "updatedAt": "2023-08-27T12:19:19.581Z",
-    "preference": {
-      "userId": 11,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:19:19.581Z",
-      "updatedAt": "2023-08-27T12:19:19.581Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 12,
-    "email": "Deven.Bhattathiri96@yahoo.co.in",
-    "name": "Ravi Rana",
-    "password": "$2b$10$t1NtLmTT5mFBz4MBj4rHa.MHEgAb4BSdyY7CetuKOI9Bk5LbNvOX6",
-    "createdAt": "2023-08-27T12:19:20.007Z",
-    "updatedAt": "2023-08-27T12:19:20.007Z",
-    "preference": {
-      "userId": 12,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:19:20.007Z",
-      "updatedAt": "2023-08-27T12:19:20.007Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 13,
-    "email": "Adripathi_Pandey4@hotmail.com",
-    "name": "Soma Kocchar",
-    "password": "$2b$10$AqGBHRpe7olOxlXzPI8W8etISMyvaR4eY6viLzVV0A3i1F5gIprY6",
-    "createdAt": "2023-08-27T12:20:02.845Z",
-    "updatedAt": "2023-08-27T12:20:02.845Z",
-    "preference": {
-      "userId": 13,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:20:02.845Z",
-      "updatedAt": "2023-08-27T12:20:02.845Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 14,
-    "email": "Bhuvanesh_Patel@hotmail.com",
-    "name": "Chandrani Shah",
-    "password": "$2b$10$rYgw5JlWqw3PleXwgTNVGuRxBPfzZfDZ1o/WqWhWLzi99eYXP568a",
-    "createdAt": "2023-08-27T12:20:03.378Z",
-    "updatedAt": "2023-08-27T12:20:03.378Z",
-    "preference": {
-      "userId": 14,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:20:03.378Z",
-      "updatedAt": "2023-08-27T12:20:03.378Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 15,
-    "email": "Dhana.Agarwal83@gmail.com",
-    "name": "Chetan Devar",
-    "password": "$2b$10$2XPaJZoULVOmNEjVDQyF4.T8kvd.7lPzGq9JUUdwZGmOoCCFgmOhy",
-    "createdAt": "2023-08-27T12:20:03.889Z",
-    "updatedAt": "2023-08-27T12:20:03.890Z",
-    "preference": {
-      "userId": 15,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:20:03.890Z",
-      "updatedAt": "2023-08-27T12:20:03.890Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 16,
-    "email": "Balamani_Varman-Butt@hotmail.com",
-    "name": "Anand Pillai IV",
-    "password": "$2b$10$QodJfi.2ZjZOAbbznFmCV.osjnE.cPChJCSumvWipXTzoGQ0ssoz6",
-    "createdAt": "2023-08-27T12:20:05.662Z",
-    "updatedAt": "2023-08-27T12:20:05.663Z",
-    "preference": {
-      "userId": 16,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:20:05.663Z",
-      "updatedAt": "2023-08-27T12:20:05.663Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 17,
-    "email": "Rohit_Guha18@hotmail.com",
-    "name": "Veda Marar",
-    "password": "$2b$10$SumwRgfLxI4q0YSbxUi1pOnbe7CTVbQGD8/em7qQpSuoKpnYxSqi.",
-    "createdAt": "2023-08-27T12:20:18.560Z",
-    "updatedAt": "2023-08-27T12:20:18.560Z",
-    "preference": {
-      "userId": 17,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:20:18.560Z",
-      "updatedAt": "2023-08-27T12:20:18.560Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 18,
-    "email": "Navin7@gmail.com",
-    "name": "Dr. Bankimchandra Tagore",
-    "password": "$2b$10$aC9rJHxBacQqTU.mmifYq.8QrCbANdXxE0UlukYc.qmdBkreQnBrG",
-    "createdAt": "2023-08-27T12:21:14.019Z",
-    "updatedAt": "2023-08-27T12:21:14.020Z",
-    "preference": {
-      "userId": 18,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:21:14.020Z",
-      "updatedAt": "2023-08-27T12:21:14.020Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 19,
-    "email": "Balgopal77@yahoo.co.in",
-    "name": "Bala Mehrotra",
-    "password": "$2b$10$DIDeShdDwP6JwxYyKrYatOlOd6Jf9udT3kQnys9jJSi1MWJpTq1Fe",
-    "createdAt": "2023-08-27T12:21:18.461Z",
-    "updatedAt": "2023-08-27T12:21:18.461Z",
-    "preference": {
-      "userId": 19,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:21:18.461Z",
-      "updatedAt": "2023-08-27T12:21:18.461Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 20,
-    "email": "Sushil88@yahoo.co.in",
-    "name": "Lalita Patil",
-    "password": "$2b$10$m6RM.VGH4m79OC.X5nG/xeGcm9h5z0FKIlR/yEqBP/45DBnUBoEpm",
-    "createdAt": "2023-08-27T12:23:27.700Z",
-    "updatedAt": "2023-08-27T12:23:27.703Z",
-    "preference": {
-      "userId": 20,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:23:27.703Z",
-      "updatedAt": "2023-08-27T12:23:27.703Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 21,
-    "email": "Shridevi86@hotmail.com",
-    "name": "Tanirika Achari",
-    "password": "$2b$10$/vvN6R/0jL37MGDV5TI2ZunhMDksFmbE7vQGYP0CLPqdosTCkbCTi",
-    "createdAt": "2023-08-27T12:27:35.866Z",
-    "updatedAt": "2023-08-27T12:27:35.869Z",
-    "preference": {
-      "userId": 21,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:27:35.869Z",
-      "updatedAt": "2023-08-27T12:27:35.869Z",
-      "read": [],
-      "favorite": []
-    }
-  },
-  {
-    "id": 22,
-    "email": "Rukmin_Mukhopadhyay@yahoo.co.in",
-    "name": "Aditeya Malik",
-    "password": "$2b$10$w.bXgFxIzj1nXfigj0PjKO9QfjslVuDrrbjwEIw7Fl.bjgfpaJj2e",
-    "createdAt": "2023-08-27T12:27:53.264Z",
-    "updatedAt": "2023-08-27T12:27:53.264Z",
-    "preference": {
-      "userId": 22,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T12:27:53.264Z",
-      "updatedAt": "2023-08-27T12:27:53.264Z",
+      "createdAt": "2023-08-27T14:42:04.567Z",
+      "updatedAt": "2023-08-27T14:42:04.567Z",
       "read": [],
       "favorite": []
     }
