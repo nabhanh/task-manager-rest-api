@@ -24,7 +24,7 @@
     "prepare": "husky install",
     "task-manager-rest-api:start": "pnpm dlx ts-node-dev --transpile-only projects/task-manager-rest-api/src/index.ts",
     "news-rest-api:start": "pnpm dlx ts-node-dev --transpile-only projects/news-rest-api/src/index.ts",
-    "test": "vitest run",
+    "test": "vitest run --singleThread=true",
     "coverage": "vitest run --coverage"
   },
   "lint-staged": {

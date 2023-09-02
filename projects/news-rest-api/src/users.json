@@ -34,23 +34,5 @@
       "read": [],
       "favorite": []
     }
-  },
-  {
-    "id": 3,
-    "email": "nabhan.hanif@icloud.com",
-    "name": "Nabhan Hanif",
-    "password": "$2b$10$eVMjgHVIFaUcAqkShC2pkuzaiUE7NVASi6XE5q0cgjNaIJFFmbMc6",
-    "isConfirmed": false,
-    "createdAt": "2023-08-27T14:42:04.566Z",
-    "updatedAt": "2023-08-27T14:42:04.566Z",
-    "preference": {
-      "userId": 3,
-      "newsSources": [],
-      "newsCategories": [],
-      "createdAt": "2023-08-27T14:42:04.567Z",
-      "updatedAt": "2023-08-27T14:42:04.567Z",
-      "read": [],
-      "favorite": []
-    }
   }
 ]

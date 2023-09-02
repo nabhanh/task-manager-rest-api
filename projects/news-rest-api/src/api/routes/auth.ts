@@ -156,9 +156,9 @@ router.post('/login', validator(LoginSchema), async (req, res) => {
       return res.status(400).json({ message: 'Invalid Credentials' });
     }
 
-    if (!user.isConfirmed) {
-      return res.status(400).json({ message: 'Email not confirmed' });
-    }
+    // if (!user.isConfirmed) {
+    //   return res.status(400).json({ message: 'Email not confirmed' });
+    // }
 
     const { compare } = await import('bcrypt');
     const isMatch = await compare(password, user.password);
@@ -169,13 +169,9 @@ router.post('/login', validator(LoginSchema), async (req, res) => {
 
     //create a token
     const { sign } = await import('jsonwebtoken');
-    const token = sign(
-      { id: user.id },
-      process.env.JWT_SECRET || 'thisisabigsecret🤫',
-      {
-        expiresIn: '12h'
-      }
-    );
+    const token = sign({ id: user.id }, process.env.JWT_SECRET as string, {
+      expiresIn: '12h'
+    });
 
     res
       .status(200)
