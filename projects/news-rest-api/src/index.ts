@@ -4,9 +4,18 @@ import authRouter from './api/routes/auth';
 import newsRouter from './api/routes/news';
 import preferenceRouter from './api/routes/preference';
 import httpLogger, { logger } from './lib/logger';
+import rateLimiter from 'express-rate-limit';
 
 const app = express();
 
+const limiter = rateLimiter({
+  windowMs: 15 * 60 * 1000,
+  max: 1000,
+  standardHeaders: true,
+  legacyHeaders: false
+});
+
+app.use(limiter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(httpLogger);
@@ -15,7 +24,14 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.use('/auth', authRouter);
+app.use(
+  '/auth',
+  rateLimiter({
+    windowMs: 60 * 60 * 1000,
+    max: 20 // limit each IP to 10 requests per hour for an IP
+  }),
+  authRouter
+);
 app.use('/news', newsRouter);
 app.use('/preferences', preferenceRouter);
 
@@ -30,6 +46,4 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   res.status(500).json({ message: err.message });
 });
 
-app.listen(process.env.PORT || 3000, () => {
-  logger.info(`Server is running on port ${process.env.PORT || 3000}`);
-});
+export default app;

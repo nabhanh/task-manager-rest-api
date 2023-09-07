@@ -1,34 +1,36 @@
 [
   {
     "id": 1,
-    "name": "John Doe",
-    "email": "johnDoe@mailinator.com",
-    "password": "123456",
-    "createdAt": "2019-12-12T12:12:12.000Z",
-    "updatedAt": "2019-12-12T12:12:12.000Z",
+    "email": "Smita_Pothuvaal49@yahoo.co.in",
+    "isConfirmed": true,
+    "name": "Kama Devar",
+    "password": "$2b$10$y2xN4FATbPV9zC2WJWYYV.kVUrchfuw6Btm/BO/MAMmI8hL0p/W3O",
+    "createdAt": "2023-08-27T12:19:14.632Z",
+    "updatedAt": "2023-08-27T12:19:14.635Z",
     "preference": {
       "userId": 1,
-      "newsCategories": ["sport"],
-      "newsSources": ["bbc-news"],
+      "newsSources": [],
+      "newsCategories": [],
+      "createdAt": "2023-08-27T12:19:14.635Z",
+      "updatedAt": "2023-08-27T12:19:14.635Z",
       "read": [],
-      "favorite": [],
-      "createdAt": "2019-12-12T12:12:12.000Z",
-      "updatedAt": "2019-12-12T12:12:12.000Z"
+      "favorite": []
     }
   },
   {
     "id": 2,
-    "email": "nabhanhanif2000@gmail.com",
-    "name": "Nabhan",
-    "password": "$2b$10$vQil72slUUm/EzD4dv3XoekT.iSM7KBKykZjLlkAAeIlJJrMry8EW",
-    "createdAt": "2023-08-07T08:02:20.414Z",
-    "updatedAt": "2023-08-07T08:02:20.414Z",
+    "email": "Aatreya18@hotmail.com",
+    "name": "Dr. Sukanya Gandhi",
+    "password": "$2b$10$/b1HD.76psaKUm9vGWJmtuRrC1bF7metAsHHc42ErmR4ckKCyczXK",
+    "isConfirmed": false,
+    "createdAt": "2023-08-27T14:09:50.613Z",
+    "updatedAt": "2023-08-27T14:09:50.613Z",
     "preference": {
       "userId": 2,
-      "newsSources": ["verge"],
-      "newsCategories": ["tech"],
-      "createdAt": "2023-08-07T08:02:20.414Z",
-      "updatedAt": "2023-08-07T09:25:37.941Z",
+      "newsSources": [],
+      "newsCategories": [],
+      "createdAt": "2023-08-27T14:09:50.613Z",
+      "updatedAt": "2023-08-27T14:09:50.613Z",
       "read": [],
       "favorite": []
     }

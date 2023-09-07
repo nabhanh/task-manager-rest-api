@@ -23,7 +23,6 @@ router.put('/', auth, validator(PreferencePutSchema), async (req, res) => {
     user.preference.newsCategories = newsCategories;
     user.preference.updatedAt = new Date().toISOString();
     const index = users.findIndex(u => u.id === user.id);
-    console.log(index);
     users[index] = user as never;
     writeFileSync(
       __dirname + '/../../users.json',
@@ -32,7 +31,6 @@ router.put('/', auth, validator(PreferencePutSchema), async (req, res) => {
     return res.json({ data: user.preference });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
-    console.log(error);
     req.log.error(error.message);
     return res.status(500).json({ message: 'Something went wrong' });
   }
