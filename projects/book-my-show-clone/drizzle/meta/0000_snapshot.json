@@ -1,9 +1,72 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "8846776a-5b77-4be0-8e2c-23ff96a406c1",
+  "id": "5da5b065-7dff-45b6-93ac-7b64286c4930",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
+    "booking_seat": {
+      "name": "booking_seat",
+      "schema": "",
+      "columns": {
+        "booking_id": {
+          "name": "booking_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "seat_row": {
+          "name": "seat_row",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "seat_column": {
+          "name": "seat_column",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp (6) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp (6) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "booking_seat_booking_id_user_booking_booking_id_fk": {
+          "name": "booking_seat_booking_id_user_booking_booking_id_fk",
+          "tableFrom": "booking_seat",
+          "tableTo": "user_booking",
+          "columnsFrom": [
+            "booking_id"
+          ],
+          "columnsTo": [
+            "booking_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {
+        "booking_seat_booking_id_seat_row_seat_column": {
+          "name": "booking_seat_booking_id_seat_row_seat_column",
+          "columns": [
+            "booking_id",
+            "seat_row",
+            "seat_column"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
     "movie": {
       "name": "movie",
       "schema": "",
@@ -40,13 +103,13 @@
         },
         "created_at": {
           "name": "created_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
           "notNull": true
         },
         "updated_at": {
           "name": "updated_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
           "notNull": true
         }
@@ -60,6 +123,12 @@
       "name": "movie_screening",
       "schema": "",
       "columns": {
+        "movie_screening_id": {
+          "name": "movie_screening_id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
         "movie_id": {
           "name": "movie_id",
           "type": "integer",
@@ -92,13 +161,13 @@
         },
         "created_at": {
           "name": "created_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
           "notNull": true
         },
         "updated_at": {
           "name": "updated_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
           "notNull": true
         }
@@ -132,15 +201,7 @@
           "onUpdate": "cascade"
         }
       },
-      "compositePrimaryKeys": {
-        "movie_screening_movie_id_screen_id": {
-          "name": "movie_screening_movie_id_screen_id",
-          "columns": [
-            "movie_id",
-            "screen_id"
-          ]
-        }
-      },
+      "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
     "movie_theatre": {
@@ -161,13 +222,13 @@
         },
         "created_at": {
           "name": "created_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
           "notNull": true
         },
         "updated_at": {
           "name": "updated_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
           "notNull": true
         }
@@ -208,15 +269,27 @@
           "primaryKey": false,
           "notNull": true
         },
+        "rows": {
+          "name": "rows",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "seat_count": {
+          "name": "seat_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
         "created_at": {
           "name": "created_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
           "notNull": true
         },
         "updated_at": {
           "name": "updated_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
           "notNull": true
         }
@@ -238,6 +311,69 @@
         }
       },
       "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "screen_seat": {
+      "name": "screen_seat",
+      "schema": "",
+      "columns": {
+        "screen_id": {
+          "name": "screen_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "seat_row": {
+          "name": "seat_row",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "seat_column": {
+          "name": "seat_column",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp (6) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp (6) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "screen_seat_screen_id_screen_screen_id_fk": {
+          "name": "screen_seat_screen_id_screen_screen_id_fk",
+          "tableFrom": "screen_seat",
+          "tableTo": "screen",
+          "columnsFrom": [
+            "screen_id"
+          ],
+          "columnsTo": [
+            "screen_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {
+        "screen_seat_screen_id_seat_row_seat_column": {
+          "name": "screen_seat_screen_id_seat_row_seat_column",
+          "columns": [
+            "screen_id",
+            "seat_row",
+            "seat_column"
+          ]
+        }
+      },
       "uniqueConstraints": {}
     },
     "theatre": {
@@ -282,18 +418,26 @@
         },
         "created_at": {
           "name": "created_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
           "notNull": true
         },
         "updated_at": {
           "name": "updated_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
           "notNull": true
         }
       },
-      "indexes": {},
+      "indexes": {
+        "city_idx": {
+          "name": "city_idx",
+          "columns": [
+            "city"
+          ],
+          "isUnique": false
+        }
+      },
       "foreignKeys": {},
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
@@ -334,15 +478,17 @@
         },
         "created_at": {
           "name": "created_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "now()"
         },
         "updated_at": {
           "name": "updated_at",
-          "type": "text",
+          "type": "timestamp (6) with time zone",
           "primaryKey": false,
-          "notNull": true
+          "notNull": true,
+          "default": "now()"
         }
       },
       "indexes": {
@@ -365,6 +511,80 @@
           ]
         }
       }
+    },
+    "user_booking": {
+      "name": "user_booking",
+      "schema": "",
+      "columns": {
+        "booking_id": {
+          "name": "booking_id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "movie_screening_id": {
+          "name": "movie_screening_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "seat_count": {
+          "name": "seat_count",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true,
+          "default": 1
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp (6) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp (6) with time zone",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "user_booking_user_id_user_id_fk": {
+          "name": "user_booking_user_id_user_id_fk",
+          "tableFrom": "user_booking",
+          "tableTo": "user",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        },
+        "user_booking_movie_screening_id_movie_screening_movie_screening_id_fk": {
+          "name": "user_booking_movie_screening_id_movie_screening_movie_screening_id_fk",
+          "tableFrom": "user_booking",
+          "tableTo": "movie_screening",
+          "columnsFrom": [
+            "movie_screening_id"
+          ],
+          "columnsTo": [
+            "movie_screening_id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "cascade"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
     }
   },
   "enums": {},

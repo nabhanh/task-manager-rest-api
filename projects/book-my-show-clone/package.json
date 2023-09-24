@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx ts-node src/index.ts",
-    "generate": "drizzle-kit generate:pg"
+    "migrate": "drizzle-kit generate:pg --config ./drizzle.config.ts && pnpm dlx ts-node-dev --transpile-only src/db/migrate.ts"
   },
   "repository": {
     "type": "git",
