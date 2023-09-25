@@ -21,9 +21,11 @@ CREATE TABLE IF NOT EXISTS "movie_screening" (
 	"movie_screening_id" integer PRIMARY KEY NOT NULL,
 	"movie_id" integer NOT NULL,
 	"screen_id" integer NOT NULL,
-	"start_time" text NOT NULL,
-	"end_time" text NOT NULL,
-	"custom_repeat" text,
+	"start_time" time NOT NULL,
+	"end_time" time NOT NULL,
+	"start_date" date NOT NULL,
+	"end_date" date NOT NULL,
+	"custom_repeat" text DEFAULT 'RRULE:FREQ=DAILY;',
 	"created_at" timestamp (6) with time zone NOT NULL,
 	"updated_at" timestamp (6) with time zone NOT NULL
 );

@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "pg",
-  "id": "5da5b065-7dff-45b6-93ac-7b64286c4930",
+  "id": "58bf1470-4e50-4829-b2d7-9982d312dcf6",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "booking_seat": {
@@ -143,13 +143,25 @@
         },
         "start_time": {
           "name": "start_time",
-          "type": "text",
+          "type": "time",
           "primaryKey": false,
           "notNull": true
         },
         "end_time": {
           "name": "end_time",
-          "type": "text",
+          "type": "time",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "start_date": {
+          "name": "start_date",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "end_date": {
+          "name": "end_date",
+          "type": "date",
           "primaryKey": false,
           "notNull": true
         },
@@ -157,7 +169,8 @@
           "name": "custom_repeat",
           "type": "text",
           "primaryKey": false,
-          "notNull": false
+          "notNull": false,
+          "default": "'RRULE:FREQ=DAILY;'"
         },
         "created_at": {
           "name": "created_at",

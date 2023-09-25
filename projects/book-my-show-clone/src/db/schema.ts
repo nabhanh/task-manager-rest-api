@@ -1,10 +1,12 @@
 import { relations } from 'drizzle-orm';
 import {
+  date,
   index,
   integer,
   pgTable,
   primaryKey,
   text,
+  time,
   timestamp,
   uniqueIndex
 } from 'drizzle-orm/pg-core';
@@ -114,6 +116,11 @@ export const movie_theatre = pgTable(
   })
 );
 
+export const movieTheatreRelations = relations(movie_theatre, ({ one }) => ({
+  movie: one(movie),
+  theatre: one(theatre)
+}));
+
 export type MovieTheatre = typeof movie_theatre.$inferSelect;
 export type MovieTheatreInsert = typeof movie_theatre.$inferInsert;
 
@@ -134,6 +141,10 @@ export const screen = pgTable('screen', {
     precision: 6
   }).notNull()
 });
+
+export const screenRelations = relations(screen, ({ one }) => ({
+  theatre: one(theatre)
+}));
 
 export type Screen = typeof screen.$inferSelect;
 export type ScreenInsert = typeof screen.$inferInsert;
@@ -164,6 +175,10 @@ export const screen_seat = pgTable(
   })
 );
 
+export const screenSeatRelations = relations(screen_seat, ({ one }) => ({
+  screen: one(screen)
+}));
+
 export type ScreenSeat = typeof screen_seat.$inferSelect;
 export type ScreenSeatInsert = typeof screen_seat.$inferInsert;
 
@@ -175,9 +190,11 @@ export const movie_screening = pgTable('movie_screening', {
   screen_id: integer('screen_id')
     .notNull()
     .references(() => screen.screen_id, ForeignKeyAction),
-  start_time: text('start_time').notNull(),
-  end_time: text('end_time').notNull(),
-  custom_repeat: text('custom_repeat'),
+  start_time: time('start_time').notNull(),
+  end_time: time('end_time').notNull(),
+  start_date: date('start_date').notNull(),
+  end_date: date('end_date').notNull(),
+  custom_repeat: text('custom_repeat').default('RRULE:FREQ=DAILY;'),
   created_at: timestamp('created_at', {
     withTimezone: true,
     precision: 6
@@ -187,6 +204,14 @@ export const movie_screening = pgTable('movie_screening', {
     precision: 6
   }).notNull()
 });
+
+export const movieScreeningRelations = relations(
+  movie_screening,
+  ({ one }) => ({
+    movie: one(movie),
+    screen: one(screen)
+  })
+);
 
 export type MovieScreening = typeof movie_screening.$inferSelect;
 export type MovieScreeningInsert = typeof movie_screening.$inferInsert;
@@ -244,6 +269,10 @@ export const booking_seat = pgTable(
     )
   })
 );
+
+export const bookingSeatRelations = relations(booking_seat, ({ one }) => ({
+  userBooking: one(user_booking)
+}));
 
 export type BookingSeat = typeof booking_seat.$inferSelect;
 export type BookingSeatInsert = typeof booking_seat.$inferInsert;
