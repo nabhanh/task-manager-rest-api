@@ -68,6 +68,9 @@ importers:
       drizzle-orm:
         specifier: ^0.28.6
         version: 0.28.6(postgres@3.3.5)
+      drizzle-zod:
+        specifier: ^0.5.1
+        version: 0.5.1(drizzle-orm@0.28.6)(zod@3.21.4)
       express:
         specifier: ^4.18.2
         version: 4.18.2
@@ -89,6 +92,9 @@ importers:
       redis:
         specifier: ^4.6.10
         version: 4.6.10
+      redis-client:
+        specifier: ^0.3.5
+        version: 0.3.5
       ts-node:
         specifier: ^10.9.1
         version: 10.9.1(@types/node@20.4.7)(typescript@5.2.2)
@@ -2638,6 +2644,16 @@ packages:
       postgres: 3.3.5
     dev: false
 
+  /drizzle-zod@0.5.1(drizzle-orm@0.28.6)(zod@3.21.4):
+    resolution: {integrity: sha512-C/8bvzUH/zSnVfwdSibOgFjLhtDtbKYmkbPbUCq46QZyZCH6kODIMSOgZ8R7rVjoI+tCj3k06MRJMDqsIeoS4A==}
+    peerDependencies:
+      drizzle-orm: '>=0.23.13'
+      zod: '*'
+    dependencies:
+      drizzle-orm: 0.28.6(postgres@3.3.5)
+      zod: 3.21.4
+    dev: false
+
   /ecdsa-sig-formatter@1.0.11:
     resolution: {integrity: sha512-nagl3RYrbNv6kQkeJIpt6NJZy8twLB/2vtz6yN9Z4vRKHN4/QZJIEbqohALSgwKdnksuY3k5Addp5lg8sVoVcQ==}
     dependencies:
@@ -4639,6 +4655,12 @@ packages:
       indent-string: 4.0.0
       strip-indent: 3.0.0
     dev: true
+
+  /redis-client@0.3.5:
+    resolution: {integrity: sha512-oAtDnuRh1gTbSMuajRwAzHhRqK9BOQBzkoJhHXY+h3QdFxtWlu/lUhkYmTdgjbWn1EaCXg1EmpU42BXIgdjdiA==}
+    engines: {node: '>0.1.90'}
+    os: [linux, darwin]
+    dev: false
 
   /redis@4.6.10:
     resolution: {integrity: sha512-mmbyhuKgDiJ5TWUhiKhBssz+mjsuSI/lSZNPI9QvZOYzWvYGejtb+W3RlDDf8LD6Bdl5/mZeG8O1feUGhXTxEg==}
